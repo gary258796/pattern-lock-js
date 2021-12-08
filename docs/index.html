@@ -57,9 +57,11 @@
 </head>
 
 <body>
+    
     <a href="https://github.com/Tympanix/pattern-lock-js">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
     </a>
+
     <div class="container">
         <h1>pattern-lock-js</h1>
         <iframe class="stars" src="https://ghbtns.com/github-btn.html?user=tympanix&repo=pattern-lock-js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
@@ -82,18 +84,25 @@
         <svg>
     </div>
 
-
     <script src="vendor.js"></script>
 
     <script src="patternlock.js"></script>
 
     <script type="text/javascript">
-    var e = document.getElementById('lock')
-    var p = new PatternLock(e, {
-        onPattern: function() {
-            this.success()
-        }
-    });
+        var e = document.getElementById('lock')
+        var p = new PatternLock(e, {
+            onPattern: function(result) {
+                console.log("Result : " + result.rspCode);
+                console.log("Pattern : " + result.pattern);
+                this.success()
+            },
+            hideLine: false,
+            allowRepeat: true,
+            checkMin: false,
+            checkMax: true,
+            min: 4,
+            max: 12,
+        });
     </script>
 </body>
 

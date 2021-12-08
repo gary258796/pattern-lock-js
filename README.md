@@ -48,9 +48,9 @@ Design your desired svg pattern (or use the default one below). Your svg graphic
 Initialise the component
 ```javascript
 var lock = new PatternLock("#lock", {
-  onPattern: function(pattern) {
-    // Context is the pattern lock instance
-    console.log(pattern)
+  onPattern: function(result) {
+    console.log(result.rspCode);
+    // check rspCode equals 0000 before you retrieve result.pattern
    }
 });
 ```
@@ -60,9 +60,18 @@ The returned object from `new PatternLock(...)` has the following utility functi
 * **`clear()`** Clears the current pattern
 * **`success()`** Validates the pattern as correct
 * **`error()`** Validates the pattern as incorrect
-* **`getPattern()`** Returnes the currently active pattern or `NaN`
+* **`switchHide()`** Hide or Show line when running 
+* **`getPattern()`** Return an object contains rspCode and pattern result.    
+  * `0000` -> Success
+  * `1001` -> Input nodes number invalid(Smaller than minimun number)
+  * `1002` -> Input nodes number invalid(Exceed manimun accepted number)
 
 The pattern lock constructor accepts a second argument - an object literal with the following properties:
 
 * **`onPattern: function`** Called when a pattern is drawn with the pattern as argument. Returning true/false validates/invalidates the pattern - the same as calling `success()` and `error()`. The context is set to the pattern lock instance itself.
-* **`vibrate: boolean`** Defines if there should be vibrations while using the PatternLock (if available). Default: `true`
+* **`allowRepeat: boolean`** Defines if nodes can be selected repeatly(But can't select one node continuosly). Default: `true`
+* **`hideLine: boolean`** Hide the lines if needed. Default: `false`
+* **`checkMin: boolean`** Defines if need check min input nodes. Default: `true`
+* **`checkMax: boolean`** Defines if need check max input nodes. Default: `true`
+* **`min: number`** Defines the minimum valid numbers of input nodes. Default: `4`
+* **`max: number`** Defines the maximun valid numbers of input nodes. Default: `9`
