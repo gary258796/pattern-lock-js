@@ -1,6 +1,6 @@
 {
   "name": "@garyliao/pattern-lock-js-advanced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An pattern lock project forked from @tympanix/pattern-lock-js, but with more options and functions to operate with.",
   "main": "patternlock.js",
   "directories": {
