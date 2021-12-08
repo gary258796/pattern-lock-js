@@ -1,7 +1,7 @@
 {
-  "name": "pattern-lock-js",
-  "version": "1.0.1",
-  "description": "An android inspired patter lock in pure javascript",
+  "name": "@gary.liao/pattern-lock-js-advanced",
+  "version": "1.0.0",
+  "description": "An pattern lock project forked from @tympanix/pattern-lock-js, but with more options and functions to operate with.",
   "main": "patternlock.js",
   "directories": {
     "doc": "docs"
@@ -30,9 +30,14 @@
     "android",
     "authentication",
     "javascript",
-    "web"
+    "web",
+    "ui"
   ],
-  "author": "tympanix",
+  "author": {
+    "name": "garyliao",
+    "email": "gary258796@gmail.com",
+    "url": "https://github.com/gary258796"
+  },
   "license": "MIT",
-  "repository": "https://github.com/tympanix/pattern-lock-js.git"
+  "repository": "https://github.com/gary258796/pattern-lock-js"
 }
