@@ -6,12 +6,7 @@ A passcode mechanism built with scalable vector graphics (SVG) and javascript fo
 ## Install
 Install using npm:
 ```
-npm i pattern-lock-js --save
-```
-
-... or install using yarn:
-```
-yarn add pattern-lock-js
+npm i @garyliao/pattern-lock-js-advanced
 ```
 
 ## Getting started
